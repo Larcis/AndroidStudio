@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Uygar_Odev1</string>
+    <string name="name_hint">Name</string>
+    <string name="surname_hint">Surname</string>
+    <string name="birth_place_hint">Birth place</string>
+    <string name="sample_tcno">Identity Number(TC NO)</string>
+    <string name="profile_photo_hint">Profile photo</string>
+    <string name="ileri_button_text">next</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="birth_date_hint">Birth Date</string>
+</resources>

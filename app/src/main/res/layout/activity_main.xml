@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineHorizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineHorizontal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineVertical2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineVertical3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/name_hint"
+        android:ems="10"
+        android:hint="@string/name_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineVertical"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical3"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/surname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/surname_hint"
+        android:ems="10"
+        android:hint="@string/surname_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical3"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineVertical"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/birth_place"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/birth_place_hint"
+        android:ems="10"
+        android:hint="@string/birth_place_hint"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineVertical"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical3"
+        app:layout_constraintTop_toBottomOf="@id/surname"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/identity_no"
+        android:maxLength="11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="tc kimlik numarası"
+        android:ems="10"
+        android:hint="@string/sample_tcno"
+        android:inputType="numberDecimal"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineVertical"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical3"
+        app:layout_constraintTop_toBottomOf="@id/birth_place"
+        tools:targetApi="o" />
+
+    <EditText
+        android:id="@+id/birth_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="birth date"
+        android:ems="10"
+        android:hint="@string/birth_date_hint"
+        android:inputType="date"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineVertical"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical3"
+        app:layout_constraintTop_toBottomOf="@id/identity_no"
+        tools:targetApi="o"/>
+
+    <ImageView
+        android:id="@+id/profile_photo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/profile_photo_hint"
+        android:cropToPadding="false"
+        android:onClick="pick_image"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical2"
+        app:layout_constraintStart_toEndOf="@+id/identity_no"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal"
+        android:src="@drawable/profile" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="serif"
+        android:lineSpacingExtra="18sp"
+        android:onClick="go_next_activity"
+        android:text="@string/ileri_button_text"
+        android:textAlignment="center"
+        android:background="@color/buttonBGColor"
+        android:textAllCaps="true"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/buttonFontColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:maxLength="11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/phone_number_hint"
+        android:inputType="phone"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVertical"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVertical3"
+        app:layout_constraintTop_toBottomOf="@id/birth_date" />
+
+    <Button
+        android:id="@+id/clear_form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/buttonBGColor"
+        android:fontFamily="serif"
+        android:lineSpacingExtra="18sp"
+        android:onClick="clear_form"
+        android:text="Clear Form"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/buttonFontColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+        app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal2"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
