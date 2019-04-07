@@ -12,6 +12,30 @@
         android:layout_height="wrap_content"
         tools:context=".ShowInfoActivity">
 
+        <Button
+            android:id="@+id/call2"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/buttonBGColor"
+            android:onClick="send_mail"
+            android:text="send e-mail"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textColor="@color/buttonFontColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal3"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/email_t" />
+
         <android.support.constraint.Guideline
             android:id="@+id/guidelineHorizontal"
             android:layout_width="wrap_content"
@@ -31,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.56" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guidelineVertical"
@@ -175,7 +199,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:background="@color/buttonBGColor"
             android:onClick="callNumber"
             android:text="call"
@@ -186,7 +209,6 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:typeface="serif"
-            app:layout_constraintBottom_toTopOf="@+id/show_notes"
             app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
@@ -212,6 +234,18 @@
             app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
             app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
             app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal3" />
+
+        <TextView
+            android:id="@+id/email_t"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="------"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
+            app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/call" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

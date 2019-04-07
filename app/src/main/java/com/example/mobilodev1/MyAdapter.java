@@ -1,12 +1,15 @@
 package com.example.mobilodev1;
 
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +17,6 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<Course> models;
-
     public  MyAdapter(final List<Course> l){
         models = new ArrayList<>(l);
         HashMap<String, Float> not = new HashMap<>();
@@ -47,6 +49,18 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int itemPosition = ((RecyclerView)parent.findViewById(R.id.simple_recyclerview)).getChildLayoutPosition(view);
+                Course item = models.get(itemPosition);
+                if(item.getName().contains("BLM")){
+                    Intent i = new Intent(parent.getContext(), ShowCourseInfoActivity.class);
+                    i.putExtra("data", item.getName());
+                    parent.getContext().startActivity(i);
+                }
+            }
+        });
         return new MyViewHolder(view);
     }
 

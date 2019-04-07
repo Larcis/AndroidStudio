@@ -140,14 +140,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/buttonBGColor"
         android:fontFamily="serif"
         android:lineSpacingExtra="18sp"
         android:onClick="go_next_activity"
         android:text="@string/ileri_button_text"
         android:textAlignment="center"
-        android:background="@color/buttonBGColor"
         android:textAllCaps="true"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="@color/buttonFontColor"
@@ -157,7 +157,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal2"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical2"
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+        app:layout_constraintTop_toBottomOf="@+id/email_et" />
 
     <EditText
         android:id="@+id/phone_number"
@@ -193,5 +193,16 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
         app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal2"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <EditText
+        android:id="@+id/email_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/phone_number"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+        android:hint="E-mail"  />
 </android.support.constraint.ConstraintLayout>
 </ScrollView>

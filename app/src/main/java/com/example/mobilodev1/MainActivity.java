@@ -21,7 +21,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMG = 1;
-    private TextView  name, surname, birth_place, identity_no, tel_no, birth_date;
+    private TextView  name, surname, birth_place, identity_no, tel_no, birth_date,email;
     private ImageView profile_photo;
     private Uri       my_image;
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         tel_no        = findViewById(R.id.phone_number);
         birth_date    = findViewById(R.id.birth_date);
         profile_photo = findViewById(R.id.profile_photo);
-
+        email         = findViewById(R.id.email_et);
         birth_date.setShowSoftInputOnFocus(false);
         birth_date.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("telno",       tel_no.getText().toString());
         outState.putString("birth_date",  birth_date.getText().toString());
         outState.putString("identity_no", identity_no.getText().toString());
+        outState.putString("email", email.getText().toString());
         outState.putParcelable("image_uri", my_image);
     }
 
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 tel_no.setText(savedInstanceState.getString("telno"));
                 birth_date.setText(savedInstanceState.getString("birth_date"));
                 birth_place.setText(savedInstanceState.getString("birth_place"));
+                email.setText(savedInstanceState.getString("email"));
                 my_image = savedInstanceState.getParcelable("image_uri");
                 //profile_photo.setImageURI(my_image);
                 draw_image();
@@ -138,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("telno", tel_no.getText().toString());
             i.putExtra("tcno", identity_no.getText().toString());
             i.putExtra("image_uri", my_image);
+            i.putExtra("email", email.getText().toString());
             startActivity(i);
         }
     }

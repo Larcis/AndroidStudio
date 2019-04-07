@@ -28,6 +28,8 @@ public class ShowInfoActivity extends AppCompatActivity {
     private TextView tel_no ;
     private TextView birth_date;
     private TextView age;
+    private TextView email;
+
     private ImageView profile_photo;
     private Uri     my_image;
 
@@ -46,7 +48,7 @@ public class ShowInfoActivity extends AppCompatActivity {
         birth_date    = findViewById(R.id.birth_date);
         profile_photo = findViewById(R.id.profile_photo);
         age           = findViewById(R.id.age);
-
+        email         = findViewById(R.id.email_t);
         update_components(savedInstanceState);
 
         Intent i  = getIntent();
@@ -58,6 +60,8 @@ public class ShowInfoActivity extends AppCompatActivity {
             tel_no.setText("Tel. No: " + i.getStringExtra("telno"));
             identity_no.setText("TC No: " + i.getStringExtra("tcno"));
             age.setText(calculateAge(i.getStringExtra("birth_date")));
+            email.setText(i.getStringExtra("email"));
+
             my_image = i.getParcelableExtra("image_uri");
             draw_image();
         }
@@ -82,7 +86,14 @@ public class ShowInfoActivity extends AppCompatActivity {
             call_action();
         }
     }
-
+    public void send_mail(View v){
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto",email.getText().toString(), null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Konu");
+        //emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{});
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "\n\n\n\nÖdev 1 den göderildi....");
+        startActivity(Intent.createChooser(emailIntent, "Send email..."));
+    }
     public void show_notes(View v){
         startActivity(new Intent(ShowInfoActivity.this, ShowNotesActivity.class));
     }

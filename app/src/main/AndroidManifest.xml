@@ -11,11 +11,14 @@
         android:roundIcon="@mipmap/uygar_ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowNotesActivity">
-        </activity>
-        <activity android:name=".ShowInfoActivity" />
+        <activity android:name=".ShowCourseInfoActivity"></activity>
         <activity
             android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".ShowNotesActivity" />
+        <activity android:name=".ShowInfoActivity" />
+        <activity
+            android:name=".LoginActivity"
             android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
